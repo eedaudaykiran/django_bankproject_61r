@@ -1,0 +1,32 @@
+{% extends "bank/base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="row g-4 fade-in">
+
+    <div class="col-lg-6">
+        <div class="pro-card">
+            <h3>👤 Savings Account</h3>
+            <p>Create & manage your personal savings account.</p>
+            <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-primary" href="{% url 'create_savings' %}">Create</a>
+                <a class="btn btn-outline-light" href="{% url 'savings_dashboard' %}">Open Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="pro-card">
+            <h3>🏢 Business Account</h3>
+            <p>Withdraw with overdraft & request loan easily.</p>
+            <div class="d-flex gap-2 flex-wrap">
+                <a class="btn btn-primary" href="{% url 'create_business' %}">Create</a>
+                <a class="btn btn-outline-light" href="{% url 'business_dashboard' %}">Open Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

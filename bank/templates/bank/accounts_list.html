@@ -1,0 +1,54 @@
+{% extends "bank/base.html" %}
+{% block title %}My Accounts{% endblock %}
+{% block content %}
+
+<div class="fade-in">
+    <h2 class="mb-3">🏦 My Accounts</h2>
+
+    <div class="row g-3">
+
+        <div class="col-lg-6">
+            <div class="pro-card">
+                <h4>👤 Savings Accounts</h4>
+                {% for s in savings %}
+                <div class="acc-row">
+                    <div>
+                        <b>ID:</b> {{ s.id }} <br>
+                        <b>Name:</b> {{ s.holder_name }} <br>
+                        <b>Balance:</b> ₹{{ s.balance }} <br>
+                        <b>Status:</b>
+                        {% if s.is_active %} ✅ Active {% else %} ❌ Frozen {% endif %}
+                    </div>
+                </div>
+                <hr>
+                {% empty %}
+                <p>No savings accounts found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="pro-card">
+                <h4>🏢 Business Accounts</h4>
+                {% for b in business %}
+                <div class="acc-row">
+                    <div>
+                        <b>ID:</b> {{ b.id }} <br>
+                        <b>Business:</b> {{ b.business_name }} <br>
+                        <b>Owner:</b> {{ b.holder_name }} <br>
+                        <b>Balance:</b> ₹{{ b.balance }} <br>
+                        <b>Status:</b>
+                        {% if b.is_active %} ✅ Active {% else %} ❌ Frozen {% endif %}
+                    </div>
+                </div>
+                <hr>
+                {% empty %}
+                <p>No business accounts found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

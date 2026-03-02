@@ -1,0 +1,83 @@
+{% extends "bank/base.html" %}
+{% block title %}Savings Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center fade-in">
+    <div class="col-lg-7">
+
+        <div class="pro-card">
+            <h2 class="mb-3">👤 Savings Account Dashboard</h2>
+            <p class="text-white-50">
+                Enter your Savings Account ID + PIN and perform banking actions.
+            </p>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Savings Account ID</label>
+                    <input type="number" name="sid" class="form-control" placeholder="Example: 1" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">PIN</label>
+                    <input type="number" name="pin" class="form-control" placeholder="Example: 1234" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Amount (Deposit / Withdraw)</label>
+                    <input type="number" name="amount" class="form-control" placeholder="Example: 5000">
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-light w-100" name="action" value="check">
+                            Check Balance
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-success w-100" name="action" value="deposit">
+                            Deposit
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-warning w-100" name="action" value="withdraw">
+                            Withdraw
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-primary w-100" name="action" value="atm">
+                            Request ATM Card
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-info w-100" name="action" value="cheque">
+                            Request Cheque Book
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-danger w-100" name="action" value="freeze">
+                            Freeze Account
+                        </button>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-secondary w-100" name="action" value="unfreeze">
+                            Unfreeze Account
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

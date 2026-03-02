@@ -1,0 +1,58 @@
+{% extends "bank/base.html" %}
+{% block title %}Business Dashboard{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center fade-in">
+    <div class="col-lg-7">
+        <div class="pro-card">
+            <h2 class="mb-3">🏢 Business Account Dashboard</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Business Account ID</label>
+                    <input type="number" name="bid" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Amount (Withdraw / Loan)</label>
+                    <input type="number" name="amount" class="form-control">
+                </div>
+
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-light w-100" name="action" value="check">
+                            Check Balance
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-success w-100" name="action" value="deposit">
+                            Deposit
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-warning w-100" name="action" value="withdraw">
+                            Withdraw (Overdraft)
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-primary w-100" name="action" value="loan">
+                            Request Loan
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button class="btn btn-info w-100" name="action" value="cheque">
+                            Request Cheque Book
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

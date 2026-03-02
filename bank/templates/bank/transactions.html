@@ -1,0 +1,44 @@
+{% extends "bank/base.html" %}
+{% block title %}Transactions{% endblock %}
+
+{% block content %}
+
+<div class="fade-in">
+    <h2 class="mb-3">📊 Transaction History</h2>
+
+    <div class="table-responsive pro-card">
+        <table class="table table-dark table-hover table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Account Type</th>
+                    <th>Account ID</th>
+                    <th>Action</th>
+                    <th>Amount</th>
+                    <th>Balance After</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for t in tx %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ t.account_type }}</td>
+                    <td>{{ t.account_id }}</td>
+                    <td>{{ t.action }}</td>
+                    <td>₹{{ t.amount }}</td>
+                    <td>₹{{ t.balance_after }}</td>
+                    <td>{{ t.created_at|date:"d-m-Y, h:i A" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="7" class="text-center">No transactions yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

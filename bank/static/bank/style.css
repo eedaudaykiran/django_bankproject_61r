@@ -1,0 +1,118 @@
+body {
+    background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    min-height: 100vh;
+}
+
+.glass-nav {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(12px);
+}
+
+.pro-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section {
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+/* ✅ FIXED (Now BankCustomerWise will show) */
+.text-gradient {
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.hero-text {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 12px;
+}
+
+.mini-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.mini-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+}
+
+.floating-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 20px;
+    animation: floaty 3s infinite ease-in-out;
+    max-width: 380px;
+    margin: auto;
+}
+
+@keyframes floaty {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fade-in {
+    animation: fadein 0.8s ease-in-out;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.auth-box {
+    max-width: 420px;
+    margin: auto;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+}
+
+/* ✅ Responsive */
+@media(max-width:768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .mini-stats {
+        grid-template-columns: 1fr;
+    }
+}

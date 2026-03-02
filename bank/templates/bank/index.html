@@ -1,0 +1,63 @@
+{% extends "bank/base.html" %}
+{% block title %}Welcome | BankCustomerWise{% endblock %}
+
+{% block content %}
+
+<div class="hero-section fade-in">
+    <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+            <h1 class="hero-title">
+                Welcome to <span class="text-gradient">BankCustomerWise</span> 🚀
+            </h1>
+
+            <p class="hero-text">
+                Create Savings & Business Accounts, do secure transactions,
+                check balance, request cards & cheque books, and track history – all in one dashboard.
+            </p>
+
+            <div class="d-flex gap-2 flex-wrap">
+                {% if user.is_authenticated %}
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg shadow-lg">
+                    <i class="bi bi-speedometer2"></i> Go Dashboard
+                </a>
+                {% else %}
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg shadow-lg">
+                    <i class="bi bi-box-arrow-in-right"></i> Login
+                </a>
+
+                <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg shadow-lg">
+                    <i class="bi bi-person-plus"></i> Register
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="mini-stats mt-4">
+                <div class="mini-card">
+                    <h5>🔐 Secure</h5>
+                    <p>PIN + Account Status</p>
+                </div>
+                <div class="mini-card">
+                    <h5>⚡ Fast</h5>
+                    <p>1-click Banking Actions</p>
+                </div>
+                <div class="mini-card">
+                    <h5>📊 Tracking</h5>
+                    <p>Transaction History</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 text-center">
+            <div class="floating-card">
+                <h4 class="fw-bold mb-3">🏦 Smart Banking UI</h4>
+                <p class="mb-2">✅ Savings Account</p>
+                <p class="mb-2">✅ Business Account</p>
+                <p class="mb-2">✅ Overdraft + Loan</p>
+                <p class="mb-0">✅ Transaction Logs</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
