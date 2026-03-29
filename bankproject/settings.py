@@ -14,13 +14,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w34&#55i5s!xriy+n@jjkd-taxf3uic4_4u^gb^(7c=0_608gr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django-bankproject-61r-1.onrender.com']
+ALLOWED_HOSTS = [
+    'django-bankproject-61r-1.onrender.com',
+    '.onrender.com',
+    '127.0.0.1',
+    'localhost',
+]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://django-bankproject-61r-1.onrender.com'
+    'https://django-bankproject-61r-1.onrender.com',
+    'https://*.onrender.com',
 ]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
