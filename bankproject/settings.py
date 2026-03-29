@@ -14,9 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w34&#55i5s!xriy+n@jjkd-taxf3uic4_4u^gb^(7c=0_608gr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-bankproject-61r-1.onrender.com']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-bankproject-61r-1.onrender.com'
+]
 
 
 # Application definition
